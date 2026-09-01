@@ -1,12 +1,11 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate\Console;
+namespace Weboldalnet\CommerceGls\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
-use Weboldalnet\PackageTemplate\Support\PackageHelper;
+use Weboldalnet\CommerceGls\Support\PackageHelper;
 
-class ExtendViewsArticlesCommand extends Command
+class ExtendViewsCommerceGlsCommand extends Command
 {
     protected $signature = PackageHelper::PACKAGE_PREFIX . ':extend {--view=}';
     protected $description = 'Fájl kiegészítések';

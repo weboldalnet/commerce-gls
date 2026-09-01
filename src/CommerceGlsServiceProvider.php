@@ -1,13 +1,13 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate;
+namespace Weboldalnet\CommerceGls;
 
 use Illuminate\Support\ServiceProvider;
-use Weboldalnet\PackageTemplate\Support\PackageHelper;
-use Weboldalnet\PackageTemplate\Console\ExtendViewsArticlesCommand;
-use Weboldalnet\PackageTemplate\Console\InstallArticlesCommand;
+use Weboldalnet\CommerceGls\Support\PackageHelper;
+use Weboldalnet\CommerceGls\Console\ExtendViewsCommerceGlsCommand;
+use Weboldalnet\CommerceGls\Console\InstallCommerceGlsCommand;
 
-class ArticleServiceProvider extends ServiceProvider
+class CommerceGlsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -32,12 +32,14 @@ class ArticleServiceProvider extends ServiceProvider
 
     public function register()
     {
+        $this->mergeConfigFrom(__DIR__.'/../config/commerce-gls.php', 'commerce-gls');
+
         $this->commands([
-            InstallArticlesCommand::class,
+            InstallCommerceGlsCommand::class,
         ]);
 
         $this->commands([
-            ExtendViewsArticlesCommand::class,
+            ExtendViewsCommerceGlsCommand::class,
         ]);
     }
 }

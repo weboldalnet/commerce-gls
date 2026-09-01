@@ -1,32 +1,27 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate\Support;
+namespace Weboldalnet\CommerceGls\Support;
 
 class PackageHelper
 {
-    const PACKAGE_NAME = 'Blog/Cikkek modul';
-    const PACKAGE_PREFIX = 'article';
+    const PACKAGE_NAME = 'GLS szállítási modul';
+    const PACKAGE_PREFIX = 'commerce-gls';
 
     const PACKAGE_LIST = [
-        'app' => [
-            'name' => 'app | app/',
-            'source' => __DIR__.'/../../app',
-            'destination' => '/app',
+        'routes' => [
+            'name' => 'routes | routes/web.php',
+            'source' => __DIR__.'/../../routes/web.php',
+            'destination' => '/routes/commerce-gls.php',
         ],
-        'database' => [
-            'name' => 'database | database/migrations',
-            'source' => __DIR__.'/../../database/migrations',
-            'destination' => '/database/migrations',
+        'settings' => [
+            'name' => 'settings | settings/',
+            'source' => __DIR__.'/../../settings',
+            'destination' => '/settings/commerce-gls',
         ],
-        'public' => [
-            'name' => 'public | public/js,site',
-            'source' => __DIR__.'/../../public',
-            'destination' => '/public',
-        ],
-        'views' => [
-            'name' => 'views | resources/views',
-            'source' => __DIR__.'/../../resources/views',
-            'destination' => '/resources/views',
+        'config' => [
+            'name' => 'config | config/commerce-gls.php',
+            'source' => __DIR__.'/../../config/commerce-gls.php',
+            'destination' => '/config/commerce-gls.php',
         ],
     ];
 

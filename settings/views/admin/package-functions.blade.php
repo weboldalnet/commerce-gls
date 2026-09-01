@@ -1,8 +1,8 @@
 <?php
-$phName = \Weboldalnet\PackageTemplate\Support\PackageHelper::PACKAGE_NAME;
-$phPrefix = \Weboldalnet\PackageTemplate\Support\PackageHelper::PACKAGE_PREFIX;
-$phList = \Weboldalnet\PackageTemplate\Support\PackageHelper::PACKAGE_LIST;
-$phViewExtends = \Weboldalnet\PackageTemplate\Support\PackageHelper::PACKAGE_VIEW_EXTENDS;
+$phName = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_NAME;
+$phPrefix = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_PREFIX;
+$phList = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_LIST;
+$phViewExtends = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_VIEW_EXTENDS;
 ?>
 <div class="col-lg-6 mb-3">
     <div class="content-box">

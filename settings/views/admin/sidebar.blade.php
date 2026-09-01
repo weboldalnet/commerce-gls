@@ -1,26 +1,23 @@
-@if($settings->has_blog)
-    <div class="mb-1">
-        <a class="menu-point collapsed @if($menuHelper::isActiveMenu($menuHelper::ARTICLES, $url)) active @endif"
-           data-toggle="collapse" href="#articleCollapse" role="button"
-        >
-            <span><i class="fas fa-newspaper mr-1"></i>Blog</span>
-            <i class="fa-solid fa-chevron-down"></i>
-        </a>
-        <div class="collapse collapse-box @if($menuHelper::isActiveMenu($menuHelper::ARTICLES, $url)) show @endif" id="articleCollapse">
-            <div class="collapse-menu-points">
-                <a href="/article-list" class="fw-800">
-                    Cikkek listája <i class="fa-solid fa-chevron-right"></i>
-                </a>
-                <a href="/article-category-list">
-                    Cikk kategóriák <i class="fa-solid fa-chevron-right"></i>
-                </a>
+{{-- GLS szállítási modul admin menüpontja.
 
-                <hr class="d-block w-fill my-1 mx-2">
+     Csomagváz: egyelőre nincs admin felülete a modulnak, ezért a menüpont
+     ki van kommentelve — így a `commerce-gls:extend --view=sidebar` nem tesz
+     törött linket az admin oldalsávba. A szállítási funkció fejlesztésekor
+     kell aktiválni, a testvércsomagok (commerce-szamlazzhu) mintájára.
 
-                <a href="/label-list">
-                    Címkék <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
+<div class="mb-1">
+    <a class="menu-point collapsed"
+       data-toggle="collapse" href="#glsCollapse" role="button"
+    >
+        <span><i class="fas fa-truck mr-1"></i>GLS</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+    <div class="collapse collapse-box" id="glsCollapse">
+        <div class="collapse-menu-points">
+            <a href="/webshop/gls/settings" class="fw-800">
+                Beállítások <i class="fa-solid fa-chevron-right"></i>
+            </a>
         </div>
     </div>
-@endif
+</div>
+--}}
