@@ -1,9 +1,9 @@
 {{-- GLS szállítási modul admin menüpontja.
 
-     Csomagváz: egyelőre nincs admin felülete a modulnak, ezért a menüpont
-     ki van kommentelve — így a `commerce-gls:extend --view=sidebar` nem tesz
-     törött linket az admin oldalsávba. A szállítási funkció fejlesztésekor
-     kell aktiválni, a testvércsomagok (commerce-szamlazzhu) mintájára.
+     A webshop-ai-default csomag oldalsávja már tartalmazza a "GLS" pontot a
+     Webshop menücsoportban, ezért ez itt ki van kommentelve — különben duplán
+     jelenne meg. Akkor kell aktiválni, ha a GLS webshop csomag nélkül,
+     önállóan kerül be egy projektbe.
 
 <div class="mb-1">
     <a class="menu-point collapsed"

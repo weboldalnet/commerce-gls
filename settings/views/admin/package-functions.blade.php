@@ -5,7 +5,7 @@ $phList = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_LIST;
 $phViewExtends = \Weboldalnet\CommerceGls\Support\PackageHelper::PACKAGE_VIEW_EXTENDS;
 ?>
 <div class="col-lg-6 mb-3">
-    <div class="content-box">
+    <div class="content-box mb-3">
         <h4 class="fw-600">{{$phName}}</h4>
 
         <ul class="nav nav-tabs border-0 pb-1" id="{{$phPrefix}}Tab" role="tablist">

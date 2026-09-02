@@ -23,6 +23,14 @@ class PackageHelper
             'source' => __DIR__.'/../../config/commerce-gls.php',
             'destination' => '/config/commerce-gls.php',
         ],
+        // A GLS beágyazható csomagpont-választó komponense (gls-dpm).
+        // A pénztár blade-je a /js/gls/gls-dpm.min.js útvonalról tölti be,
+        // ezért publikáláskor a projekt public mappájába kell kerülnie.
+        'public' => [
+            'name' => 'public | public/js/gls',
+            'source' => __DIR__.'/../../public',
+            'destination' => '/public',
+        ],
     ];
 
     const PACKAGE_VIEW_EXTENDS = [
