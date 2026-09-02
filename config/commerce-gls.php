@@ -31,6 +31,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Webshop rendszer azonosító
+    |--------------------------------------------------------------------------
+    |
+    | A MyGLS kötelezően kéri, hogy a címkét igénylő webshop-rendszer azonosítsa
+    | magát – enélkül a PrintLabels hibája: "56 Webshop engine is required!".
+    | Ez a platformot azonosítja, nem az egyes ügyfeleket, ezért nem admin
+    | beállítás. Élesben a GLS kérhet konkrét, náluk regisztrált nevet.
+    |
+    */
+    'webshop_engine' => env('COMMERCE_GLS_WEBSHOP_ENGINE', 'weboldalnet'),
+
+    /*
+    |--------------------------------------------------------------------------
     | MyGLS API hitelesítés
     |--------------------------------------------------------------------------
     |
@@ -102,8 +115,9 @@ return [
     | Feladó (a címkére kerül)
     |--------------------------------------------------------------------------
     |
-    | Az admin felületen felülbírálható. Üresen hagyva a MyGLS fiókban
-    | beállított feladó adatok érvényesek.
+    | Az admin felületen felülbírálható, de NEM hagyható üresen: a MyGLS a
+    | PrintLabels hívásnál kötelezően kéri a feladót (PickupAddress), enélkül
+    | a válasz: "13 18 - Pickup Country".
     |
     */
     'sender' => [

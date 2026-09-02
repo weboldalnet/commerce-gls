@@ -192,8 +192,21 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <div class="header-box product-info mb-1">Feladó adatai (a címkére kerül)</div>
+                        <div class="header-box product-info mb-1">
+                            Feladó adatai (a címkére kerül)
+                            <span class="badge badge-light">kötelező</span>
+                        </div>
                         <div class="content-box bordered mb-3">
+                            @php
+                                $glsSenderMissing = collect(['sender_name', 'sender_zip', 'sender_city', 'sender_address'])
+                                    ->contains(fn ($key) => trim((string) ($glsSettings[$key] ?? '')) === '');
+                            @endphp
+                            @if($glsEnabled && $glsSenderMissing)
+                                <div class="alert alert-warning py-2 px-3 small">
+                                    <i class="fa fa-exclamation-triangle mr-1"></i>
+                                    A MyGLS a feladó címét kötelezően kéri – enélkül a címke létrehozása hibára fut.
+                                </div>
+                            @endif
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-group">
@@ -236,7 +249,7 @@
                                         <label class="fw-600">Utca, házszám</label>
                                         <input type="text" name="sender_address" class="form-control" value="{{ $glsSettings['sender_address'] ?? '' }}">
                                         <input type="hidden" name="sender_country" value="{{ $glsSettings['sender_country'] ?? 'HU' }}">
-                                        <span class="text-muted fs-14">Üresen hagyva a MyGLS fiókban beállított feladó érvényes.</span>
+                                        <span class="text-muted fs-14">A név, irányítószám, város és utca kitöltése kötelező.</span>
                                     </div>
                                 </div>
                             </div>

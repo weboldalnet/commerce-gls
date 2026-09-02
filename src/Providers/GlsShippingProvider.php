@@ -157,6 +157,17 @@ class GlsShippingProvider implements ShippingProviderInterface
             ]);
         }
 
+        // A MyGLS a feladó címét kötelezően kéri – enélkül a hívás úgyis
+        // elbukna, csak sokkal kevésbé érthető hibaüzenettel.
+        if (!GlsSettingsService::hasSenderAddress()) {
+            return ShipmentCreateResult::failure([
+                'status' => ShippingStatus::FAILED,
+                'provider' => $this->getCode(),
+                'message' => 'Hiányzó feladó adatok (név, irányítószám, város, utca). '
+                    . 'Töltsd ki a Webshop → GLS beállítások „Feladó adatai” blokkját.',
+            ]);
+        }
+
         $shipping = is_array($data->shippingData) ? $data->shippingData : [];
         $parcelShopId = $data->extra['parcel_shop_id'] ?? ($shipping['parcel_shop_id'] ?? null);
 

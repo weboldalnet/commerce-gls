@@ -166,6 +166,24 @@ class GlsSettingsService
     }
 
     /**
+     * Meg van-e adva a feladó címe?
+     *
+     * A MyGLS a PrintLabels hívásnál KÖTELEZŐEN kéri a feladót (PickupAddress) –
+     * enélkül a válasz: "13 18 - Pickup Country". Nem igaz tehát, hogy üresen a
+     * MyGLS fiókban beállított feladó érvényes.
+     */
+    public static function hasSenderAddress(): bool
+    {
+        foreach (['sender_name', 'sender_zip', 'sender_city', 'sender_address'] as $key) {
+            if ((string) self::get($key) === '') {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * A MyGLS végpont alap-URL-je a környezet és az ország alapján.
      */
     public static function apiBaseUrl(): string

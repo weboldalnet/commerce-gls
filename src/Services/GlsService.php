@@ -131,6 +131,10 @@ class GlsService
             'ParcelList' => array_values($parcels),
             'PrintPosition' => 1,
             'ShowPrintDialog' => false,
+            // A MyGLS kötelezően kéri, hogy a hívó webshop-rendszer azonosítsa
+            // magát. Enélkül a válasz: "56 Webshop engine is required!".
+            // A kérés GYÖKERÉBE kell, nem a csomag objektumba.
+            'WebshopEngine' => (string) GlsSettingsService::get('webshop_engine', 'weboldalnet'),
         ];
 
         // A címkeformátumot csak akkor küldjük, ha meg van adva
