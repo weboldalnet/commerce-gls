@@ -23,6 +23,6 @@
     },
     "require": {
         "php": "^8.2",
-        "weboldalnet/commerce-core": "^1.0"
+        "weboldalnet/commerce-core": "^1.0.9"
     }
 }

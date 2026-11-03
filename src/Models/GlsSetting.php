@@ -3,6 +3,7 @@
 namespace Weboldalnet\CommerceGls\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Weboldalnet\CommerceCore\Models\Concerns\UsesCommerceConnection;
 
 /**
  * @property int $id
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class GlsSetting extends Model
 {
+    use UsesCommerceConnection;
+
     protected $table = 'commerce_gls_settings';
 
     protected $fillable = ['key', 'value', 'type', 'group'];
